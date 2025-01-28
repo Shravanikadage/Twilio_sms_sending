@@ -9,11 +9,15 @@ const PORT = 5000;
 
 // Middleware
 app.use(bodyParser.json());
+
+// Enable CORS for the specific frontend URL
 app.use(cors({
-    origin: 'https://twilio-sms-sending-frontend-xi.vercel.app', // Allow only your frontend URL
+    origin: 'https://twilio-sms-sending-frontend-xi.vercel.app', // Allow only this origin
+    methods: ['GET', 'POST', 'OPTIONS'], // Allow specific methods
+    allowedHeaders: ['Content-Type'], // Allow specific headers
 }));
 
-// Handle preflight requests
+// Handle preflight requests (OPTIONS)
 app.options('*', cors());
 
 // Twilio client setup
