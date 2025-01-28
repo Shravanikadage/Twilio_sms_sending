@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import axios from "axios";
 import './style.css';
@@ -20,18 +18,24 @@ function App() {
     const handleSendMessage = async () => {
       const formattedPhone = formatPhoneNumber(phone);
       try {
-          await axios.post("https://twilio-sms-sending-backend.vercel.app/send-message", {
-              to: formattedPhone,
-              message: message,
-          });
+          const response = await axios.post(
+              "https://twilio-sms-sending-backend.vercel.app/send-message", 
+              {
+                  to: formattedPhone,
+                  message: message,
+              },
+              {
+                  headers: {
+                      'Content-Type': 'application/json', // Ensure server expects this
+                  },
+              }
+          );
           setStatus("Message sent successfully!");
       } catch (error) {
           setStatus(`Failed to send message: ${error.response?.data?.error || error.message}`);
       }
   };
   
-  
-
     const handlePhoneChange = (e) => {
         // Remove any non-numeric characters after the country code
         const localPhone = e.target.value.replace(/[^0-9]/g, '');
