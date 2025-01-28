@@ -8,19 +8,13 @@ const app = express();
 const PORT = 5000;
 
 // Middleware
-app.use(cors(
-    {
-        origin: ["https://twilio-sms-sending-frontend-xi.vercel.app"],
-        methods: ["POST","GET"],
-        credentials: true
-    }
-));
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(cors({
+    origin: 'https://twilio-sms-sending-frontend-xi.vercel.app', // Allow only your frontend URL
+}));
 
-// Root Route
-app.get('/', (req, res) => {
-    res.send('Welcome to Server');
-});
+// Handle preflight requests
+app.options('*', cors());
 
 // Twilio client setup
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
