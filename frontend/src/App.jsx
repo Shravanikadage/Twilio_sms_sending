@@ -20,7 +20,7 @@ function App() {
     const handleSendMessage = async () => {
       const formattedPhone = formatPhoneNumber(phone);
       try {
-          await axios.post("http://localhost:5000/send-message", {
+          await axios.post("https://twilio-sms-sending-backend.vercel.app/send-message", {
               to: formattedPhone,
               message: message,
           });
