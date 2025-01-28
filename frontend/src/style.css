@@ -1,0 +1,153 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a background color and set up the layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Center the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Heading style */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4b5563;
+    margin-bottom: 30px;
+}
+
+/* Input container styling */
+.input-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.country-code {
+    background-color: #fafafa;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px 0 0 10px;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+.phone-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 0 10px 10px 0;
+    font-size: 18px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus state for phone input */
+.phone-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+}
+
+/* Textarea styling - same as input */
+textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: #fafafa;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    resize: vertical;
+}
+
+/* Focus state for textarea */
+textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+}
+
+/* Button styling */
+button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;  /* Adds space between textarea and button */
+}
+
+button:hover {
+    background-color: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Button disabled state */
+button:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* Status message styling */
+p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-top: 20px;
+    word-wrap: break-word;
+}
+
+/* Light gradient background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #D5A2F6, #7C85F7, #D5A2F6); /* Light purple to light pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Apply to the container (the white box) */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background for the box */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+}
